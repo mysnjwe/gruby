@@ -71,10 +71,16 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section - Nowy efektowny design */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 py-24 px-4">
-        {/* Tło z efektem */}
-        <div className="absolute inset-0 bg-grid-white/10 bg-[size:30px_30px] [mask-image:radial-gradient(white,transparent_85%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent" />
+      <section className="relative overflow-hidden h-[600px] flex items-center justify-center py-24 px-4">
+        <Image
+          src="https://images.pexels.com/photos/2089699/pexels-photo-2089699.jpeg"
+          alt="Nowoczesna pergola w ogrodzie jako tło sekcji hero"
+          layout="fill"
+          objectFit="cover"
+          className="z-0"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" />
         
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center text-white animate-fadeIn">
