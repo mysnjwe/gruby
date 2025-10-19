@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { getProducts, getCategories } from '@/lib/api'
+import { getProducts, getCategories } from '../../lib/api'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@repo/ui/card'
 import { Button } from '@repo/ui/button'
 

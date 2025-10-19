@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { Button } from '@repo/ui/button'
 import { Card, CardContent } from '@repo/ui/card'
-import { Product, ProductVariant } from '@/types/product'
+import { Product, ProductVariant } from '../../../types/product'
 import { ArrowLeft, Check, Package, Truck, ShieldCheck } from 'lucide-react'
 
 export default function ProductDetailPage() {
