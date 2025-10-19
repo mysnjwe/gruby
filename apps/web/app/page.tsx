@@ -1,19 +1,68 @@
 import Link from 'next/link'
-import { getProducts, getCategories } from '../lib/api'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@repo/ui/card'
 import { Button } from '@repo/ui/button'
 import { ArrowRight, Package, Truck, Shield, Star, CheckCircle2, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 
-// Force dynamic rendering to avoid build-time API calls
-export const dynamic = 'force-dynamic'
+// Static data for now (API not deployed yet)
+const categories = [
+  {
+    id: '1',
+    name: 'Barierki Aluminiowe',
+    slug: 'barierki',
+    description: 'Nowoczesne barierki aluminiowe do balkonów i tarasów'
+  },
+  {
+    id: '2', 
+    name: 'Balustrady',
+    slug: 'balustrady',
+    description: 'Eleganckie balustrady aluminiowe dla schodów i balkonów'
+  },
+  {
+    id: '3',
+    name: 'Pergole Bioklimatyczne', 
+    slug: 'pergole',
+    description: 'Funkcjonalne pergole z regulacją nasłonecznienia'
+  }
+]
 
-export default async function Home() {
-  const [products, categories] = await Promise.all([
-    getProducts(),
-    getCategories(),
-  ])
+const products = [
+  {
+    id: '1',
+    name: 'Barierka Aluminiowa Premium',
+    slug: 'barierka-premium',
+    description: 'Nowoczesna barierka aluminiowa z anodowanym wykończeniem',
+    shortDesc: 'Barierka aluminiowa premium',
+    basePrice: 450,
+    category: categories[0],
+    featured: true,
+    inStock: true
+  },
+  {
+    id: '2',
+    name: 'Balustrada Elegancka',
+    slug: 'balustrada-elegancka', 
+    description: 'Elegancka balustrada aluminiowa z szklanymi panelami',
+    shortDesc: 'Balustrada z szklanymi panelami',
+    basePrice: 680,
+    category: categories[1],
+    featured: true,
+    inStock: true
+  },
+  {
+    id: '3',
+    name: 'Pergola Bioklimatyczna',
+    slug: 'pergola-bioklimatyczna',
+    description: 'Funkcjonalna pergola z regulacją nasłonecznienia',
+    shortDesc: 'Pergola z regulacją nasłonecznienia', 
+    basePrice: 1200,
+    category: categories[2],
+    featured: true,
+    inStock: true
+  }
+]
 
+export default function Home() {
   const featuredProducts = products.filter((p) => p.featured).slice(0, 3)
 
   return (
@@ -232,7 +281,7 @@ export default async function Home() {
                     </div>
                     <div className="flex items-center gap-2 text-sm text-gray-600">
                       <CheckCircle2 className="w-4 h-4 text-green-500" />
-                      <span>{product.category.name}</span>
+                      <span>{product.category?.name || 'Produkt'}</span>
                     </div>
                   </CardContent>
                   
