@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Profesjonalna paleta dla branży aluminium */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+    --primary: 210 100% 50%; /* Niebieski dla głównych akcji */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 15% 92%; /* Jasny niebieski */
+    --secondary-foreground: 215 25% 15%;
+    --muted: 210 10% 95%;
+    --muted-foreground: 215 15% 45%;
+    --accent: 210 100% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 15% 88%;
+    --input: 210 15% 88%;
+    --ring: 210 100% 50%;
+    --radius: 0.75rem; /* Większy radius dla nowoczesnego wyglądu */
+  }
+
+  .dark {
+    --background: 215 30% 8%;
+    --foreground: 0 0% 98%;
+    --card: 215 25% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 215 25% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 210 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 20% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 215 20% 18%;
+    --muted-foreground: 215 10% 65%;
+    --accent: 210 100% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 210 100% 55%;
+  }
+}
+
+/* Animacje i efekty */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+/* Gradient dla hero */
+.hero-gradient {
+  background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 50%, #6366f1 100%);
+}
+
+/* Metaliczny gradient dla efektu aluminium */
+.metal-gradient {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #e2e8f0 75%, #f8fafc 100%);
+  background-size: 200% 200%;
+}
+
+/* Efekt shimmer dla produktów */
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Scroll smooth */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hover dla kart */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
