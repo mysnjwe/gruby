@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
-import { Button } from '@repo/ui/button'
-import { Card, CardContent } from '@repo/ui/card'
+import { Button } from '../../../components/ui/button'
+import { Card, CardContent } from '../../../components/ui/card'
 import { Product, ProductVariant } from '../../../types/product'
 import { ArrowLeft, Check, Package, Truck, ShieldCheck } from 'lucide-react'
 

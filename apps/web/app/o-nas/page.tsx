@@ -1,4 +1,4 @@
-import { Card, CardContent } from '@repo/ui/card'
+import { Card, CardContent } from '../../components/ui/card'
 import { Truck, Package, Shield, Award } from 'lucide-react'
 
 export default function AboutPage() {

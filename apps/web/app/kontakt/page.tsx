@@ -1,5 +1,5 @@
-import { Card, CardContent } from '@repo/ui/card'
-import { Button } from '@repo/ui/button'
+import { Card, CardContent } from '../../components/ui/card'
+import { Button } from '../../components/ui/button'
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 
 export default function ContactPage() {

@@ -1,7 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'standalone',
-  outputFileTracingRoot: '/Users/mateuszminge/Desktop/Gruby',
-};
+const nextConfig = {};
 
 export default nextConfig;
