@@ -73,7 +73,7 @@ export default function Home() {
       {/* Hero Section - Nowy efektowny design */}
       <section className="relative overflow-hidden h-[600px] flex items-center justify-center py-24 px-4">
         <Image
-          src="https://images.pexels.com/photos/2089699/pexels-photo-2089699.jpeg"
+          src="https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg"
           alt="Nowoczesna pergola w ogrodzie jako tło sekcji hero"
           layout="fill"
           objectFit="cover"
