@@ -10,19 +10,22 @@ const categories = [
     id: '1',
     name: 'Barierki Aluminiowe',
     slug: 'barierki',
-    description: 'Nowoczesne barierki aluminiowe do balkonów i tarasów'
+    description: 'Nowoczesne barierki aluminiowe do balkonów i tarasów',
+    imageUrl: 'https://images.pexels.com/photos/1743227/pexels-photo-1742370.jpeg'
   },
   {
-    id: '2', 
+    id: '2',
     name: 'Balustrady',
     slug: 'balustrady',
-    description: 'Eleganckie balustrady aluminiowe dla schodów i balkonów'
+    description: 'Eleganckie balustrady aluminiowe dla schodów i balkonów',
+    imageUrl: 'https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg'
   },
   {
     id: '3',
-    name: 'Pergole Bioklimatyczne', 
+    name: 'Pergole Bioklimatyczne',
     slug: 'pergole',
-    description: 'Funkcjonalne pergole z regulacją nasłonecznienia'
+    description: 'Funkcjonalne pergole z regulacją nasłonecznienia',
+    imageUrl: 'https://images.pexels.com/photos/2089699/pexels-photo-2089699.jpeg'
   }
 ]
 
@@ -182,7 +185,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Categories - Z obrazkami placeholder */}
+      {/* Categories - Z obrazkami */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -193,40 +196,34 @@ export default function Home() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {categories.map((category, index) => {
-              const gradients = [
-                'from-blue-500 to-cyan-500',
-                'from-purple-500 to-pink-500',
-                'from-orange-500 to-red-500'
-              ]
-              return (
+            {categories.map((category) => (
                 <Link key={category.id} href={`/produkty?kategoria=${category.slug}`}>
-                  <div className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 card-hover cursor-pointer h-full">
-                    {/* Gradient placeholder dla zdjęć */}
-                    <div className={`h-64 bg-gradient-to-br ${gradients[index % 3]} relative`}>
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                  <div className="group relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 card-hover cursor-pointer h-full flex flex-col">
+                    <div className="relative h-64">
+                      <Image
+                        src={category.imageUrl}
+                        alt={`Zdjęcie przedstawiające ${category.name}`}
+                        layout="fill"
+                        objectFit="cover"
+                        className="group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center text-white p-6">
-                          <div className="text-6xl mb-4">
-                            {index === 0 && '🏗️'}
-                            {index === 1 && '🎨'}
-                            {index === 2 && '☂️'}
-                          </div>
-                          <h3 className="text-2xl font-bold">{category.name}</h3>
+                          <h3 className="text-3xl font-bold tracking-tight">{category.name}</h3>
                         </div>
                       </div>
                     </div>
                     
-                    <div className="bg-white p-6">
-                      <p className="text-gray-600 mb-4">{category.description}</p>
-                      <div className="flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform">
+                    <div className="bg-white p-6 flex-grow flex flex-col">
+                      <p className="text-gray-600 mb-4 flex-grow">{category.description}</p>
+                      <div className="flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform mt-auto">
                         Zobacz produkty <ArrowRight className="w-4 h-4 ml-2" />
                       </div>
                     </div>
                   </div>
                 </Link>
-              )
-            })}
+              ))}
           </div>
         </div>
       </section>
