@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { getProducts, getCategories } from '@/lib/api'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@repo/ui/card'
+import { Button } from '@repo/ui/button'
 import { ArrowRight, Package, Truck, Shield, Star, CheckCircle2, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 
